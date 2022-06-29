@@ -1,7 +1,14 @@
 <?php
 
-require_once '../server/config.php';
+  require_once '../server/config.php';
   include 'auth.php';
+  
+  //Select Collection
+  $collection = $db->hospital_name;
+
+  $filter  = [];
+  $options = ['sort' => ['name' => 1]];
+  $all = $collection->find($filter, $options);
 
 ?>
 <!DOCTYPE html>

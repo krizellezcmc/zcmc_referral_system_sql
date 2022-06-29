@@ -56,6 +56,7 @@
                 type="password"
                 class="form-control"
                 id="newPass"
+                minlength="8"
                 required
               />
             </div>
@@ -65,6 +66,7 @@
                 type="password"
                 class="form-control"
                 id="confirmPass"
+                minlength="8"
                 required
               />
             </div>
