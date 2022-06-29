@@ -1,6 +1,3 @@
-<?php
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +15,7 @@
     <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
-    <div class="d-flex justify-content-center mt-5">
+    <div class="d-flex justify-content-center" style="margin: 100px">
       <div class="container shadow-sm rounded w-auto">
         <div class="content p-5">
           <form id="login">
@@ -28,13 +25,7 @@
             <div class="fs-6 lead text-uppercase">Hospital Referral System</div>
           </div>
            
-            <div
-              class="alert alert-danger py-2 mb-4 d-none"
-              id="errorMessage"
-              role="alert"
-            >
-              <small>This is a danger alert—check it out!</small>
-            </div>
+            
             <div class="mb-3">
               <label class="form-label">Email address</label>
               <input type="text" class="form-control" id="email" required />

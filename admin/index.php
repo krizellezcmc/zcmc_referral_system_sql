@@ -67,7 +67,7 @@
         <div class="profile">
           <img src="../images/admin.png" alt="Image" class="img-fluid" />
           <h3 class="name">ZCMC Admin</h3>
-          <span class="country">Department of Internal Medicine</span>
+          <span class="country">Zamboanga City Medical Center</span>
         </div>
 
         <div class="nav-menu">
