@@ -64,7 +64,7 @@
       <div class="side-inner">
         <div class="profile">
           <img src="../images/user.png" alt="Image" class="img-fluid" />
-          <h3 class="name">ZCMC User</h3>
+          <h3 class="name">Hi, <?php echo json_decode($_SESSION['name']); ?>!</h3>
           <span class="country">Hospital Referral System (ZCMC)</span>
         </div>
 
