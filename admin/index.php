@@ -265,6 +265,7 @@
                       placeholder=""
                     ></textarea>
                   </div>
+                  <div class="input-box"></div>
 
                   <h4 style="margin: 30px 0">ADMITTING/DISCHARGE DETAILS</h4>
                   <div class="input-box"></div>
@@ -398,13 +399,11 @@
                     </select>
                   </div>  
                 </div>
-               </div>
-               
 
-                <div class="button">
-                  <input type="submit" value="Add" />
-                </div>
+               <div class="button">
+                <input type="submit" value="Add" />
               </div>
+              
             </form>
           </div>
         </div>
