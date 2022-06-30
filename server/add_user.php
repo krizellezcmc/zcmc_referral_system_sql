@@ -11,14 +11,24 @@
       $lastName = $_POST['lastName'];
       $middleName = $_POST['middleName'];
       $email = $_POST['email'];
-      $password = $_POST['password'];
+      $hospital = $_POST['hospital'];
 
-      $hashed = password_hash($password, PASSWORD_DEFAULT);
+     
 
-      $insert = $collection->insertOne(['firstName' => $firstName, 'lastName' => $lastName, 'middleName' => $middleName, 'email' => $email, 'password' => $hashed, 'role' => "user"]); 
+      //Search hospital
+      $cursor = $db->hospital_name->find(['name' => $hospital]); 
 
-      echo json_encode($insert->getInsertedId());
-    }
+      foreach ($cursor as $result) {
+        $accessCode = $result['code'];
+      
+          $hashed = password_hash($accessCode, PASSWORD_DEFAULT);
+
+          $insert = $collection->insertOne(['firstName' => $firstName, 'lastName' => $lastName, 'middleName' => $middleName, 'email' => $email, 'hospital' => $hospital, 'password' => $hashed, 'role' => "user"]); 
+
+          echo json_encode($insert->getInsertedId());
+        }  
+      };
+
     
 
 

@@ -157,6 +157,18 @@
                   />
                 </div>
                 <div class="input-box">
+                  <span class="details">Referring Health Facility <span style="color:red">*</span></span>
+                  <select name="Referring Health Facility" id="detailHospi" required>
+                    <option value="">Choose Hospital</option>
+                  <?php  
+                   foreach($all as $list)
+                   {
+                  echo "<option value='".$list['name']."'>" .$list['name']. "</option>";
+                  }
+                  ?>
+                </select>
+                </div>
+                <div class="input-box">
                   <span class="details">Email Address</span>
                   <input
                     type="email"
@@ -165,16 +177,7 @@
                     required
                   />
                 </div>
-                <div class="input-box">
-                  <span class="details">Password</span>
-                  <input
-                    type="password"
-                    id="password"
-                    placeholder="Enter Password"
-                    minlength="8"
-                    required
-                  />
-                </div>
+                
                 <div class="input-box"></div>
               </div>
               <div class="button">
@@ -208,8 +211,8 @@
             firstName: $("#firstName").val(),
             lastName: $("#lastName").val(),
             middleName: $("#middleName").val(),
+            hospital: $("#detailHospi").val(),
             email: $("#email").val(),
-            password: $("#password").val(),
           },
           success: function (response) {
             if (response != 0) {
