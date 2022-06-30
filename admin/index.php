@@ -130,43 +130,8 @@
             <br />
             <br />
             <form name="google-sheet">
-              <div class="user-details">
                 <input name="Timestamp" id="cTime" style="display: none" />
-
-                <div class="input-box">
-                  <span class="details">Email <span style="color:red">*</span></span>
-                  <input
-                    type="email"
-                    name="Email Address"
-                    placeholder="Enter your email"
-                    required
-                  />
-                </div>
-
-                <div class="input-box">
-                  <span class="details">Referring Health Facility <span style="color:red">*</span></span>
-                  <select name="Referring Health Facility" id="detailHospi" required>
-                    <option value="">Choose Hospital</option>
-                  <?php  
-                   foreach($all as $list)
-                   {
-                  echo "<option value='".$list['name']."'>" .$list['name']. "</option>";
-                  }
-                  ?>
-                </select>
-                </div>
-
-                <div class="input-box" id="accessCode" style="width: 150px">
-                  <span class="details">Access Code <span style="color:red">*</span></span>
-                  <input type="number" id="code" name="AccessCode" placeholder="Input code" required/>
-                  <span style="display: none; color: red" id="errorMessage"
-                    >Invalid code</span
-                  >
-                </div>
-              </div>
-
-              <div class="patientInfo" id="patientInfo" style="display: none">
-                <h4 style="margin: 30px 0">PATIENT INFORMATION</h4>
+                <h4>PATIENT INFORMATION</h4>
 
                 <div class="user-details">
                   <div class="input-box">
@@ -286,10 +251,8 @@
                     </div>
                   </div>
                 </div>
-
-                <h4 style="margin: 35px 0">SIGNIFICANT OTHER/WATCHER(S)</h4>
-
-                <div class="user-details">
+                <h4 style="margin: 30px 0">SIGNIFICANT OTHER/WATCHER(S)</h4>
+               <div class="user-details">
                   <div class="input-box">
                     <span class="details">Next of Kin</span>
                     <input type="text" name="Next of Kin" placeholder="" />
@@ -303,12 +266,8 @@
                     ></textarea>
                   </div>
 
+                  <h4 style="margin: 30px 0">ADMITTING/DISCHARGE DETAILS</h4>
                   <div class="input-box"></div>
-                </div>
-
-                <h4 style="margin: 30px 0">ADMITTING/DISCHARGE DETAILS</h4>
-
-                <div class="user-details">
                   <div class="input-box" style="width: 200px">
                     <span class="details">Date Admitted <span style="color:red">*</span></span>
                     <input
@@ -439,6 +398,8 @@
                     </select>
                   </div>  
                 </div>
+               </div>
+               
 
                 <div class="button">
                   <input type="submit" value="Add" />
@@ -453,7 +414,6 @@
 
     <!-- Krizelle update -->
 
-    <script src="../hospital.js"></script>
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
