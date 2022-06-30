@@ -119,9 +119,13 @@
             <br />
             <form name="google-sheet">
                 <input name="Timestamp" id="cTime" style="display: none" />
-                <h4>PATIENT INFORMATION</h4>
+                <h4 style="margin-top: 20px">PATIENT INFORMATION</h4>
 
-                <div class="user-details">
+
+                <input type="hidden" value="<?php echo $_SESSION['hospital']?>" name="Referring Health Facility">
+                <input type="hidden" name="Full Name" value="<?php echo json_decode($_SESSION['name'])?>">
+
+                <div class="user-details" style="margin-top: 40px">
                   <div class="input-box">
                     <span class="details">Last Name <span style="color:red">*</span></span>
                     <input
