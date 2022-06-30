@@ -58,6 +58,12 @@ form .input-box span.details {
   margin-bottom: 5px;
   font-size: 13px;
 }
+form .input-box p.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
 .user-details .input-box input {
   height: 45px;
   width: 100%;

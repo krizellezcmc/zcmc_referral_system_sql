@@ -134,7 +134,7 @@
                 <input name="Timestamp" id="cTime" style="display: none" />
 
                 <div class="input-box">
-                  <span class="details">Email</span>
+                  <span class="details">Email <span style="color:red">*</span></span>
                   <input
                     type="email"
                     name="Email Address"
@@ -144,7 +144,7 @@
                 </div>
 
                 <div class="input-box">
-                  <span class="details">Referring Health Facility</span>
+                  <span class="details">Referring Health Facility <span style="color:red">*</span></span>
                   <select name="Referring Health Facility" id="detailHospi" required>
                   <?php  
                    foreach($all as $list)
@@ -156,7 +156,7 @@
                 </div>
 
                 <div class="input-box" id="accessCode" style="width: 150px">
-                  <span class="details">Access Code</span>
+                  <span class="details">Access Code <span style="color:red">*</span></span>
                   <input type="number" id="code" name="AccessCode" placeholder="Input code" required/>
                   <span style="display: none; color: red" id="errorMessage"
                     >Invalid code</span
@@ -169,7 +169,7 @@
 
                 <div class="user-details">
                   <div class="input-box">
-                    <span class="details">Last Name</span>
+                    <span class="details">Last Name <span style="color:red">*</span></span>
                     <input
                       type="text"
                       name="Last Name of Patient"
@@ -179,7 +179,7 @@
                   </div>
 
                   <div class="input-box">
-                    <span class="details">First Name</span>
+                    <span class="details">First Name <span style="color:red">*</span></span>
                     <input
                       type="text"
                       name="First Name of Patient"
@@ -309,7 +309,7 @@
 
                 <div class="user-details">
                   <div class="input-box" style="width: 200px">
-                    <span class="details">Date Admitted</span>
+                    <span class="details">Date Admitted <span style="color:red">*</span></span>
                     <input
                       type="date"
                       name="Date Admitted"
@@ -319,7 +319,7 @@
                   </div>
 
                   <div class="input-box">
-                    <span class="details">Referral Type</span>
+                    <span class="details">Referral Type<span style="color:red">*</span></span>
                     <select name="Referral Type" required>
                       <option value="">Select Referral Type</option>
                       <option value="COVID">COVID</option>
@@ -329,7 +329,7 @@
                   </div>
 
                   <div class="input-box">
-                    <span class="details">Disposition </span>
+                    <span class="details">Disposition <span style="color:red">*</span> </span>
                     <select name="Disposition" required>
                       <option value="">Select Disposition</option>
                       <option value="Moderate">Moderate</option>
