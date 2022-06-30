@@ -175,7 +175,7 @@ require_once '../server/config.php';
         event.preventDefault();
         $.ajax({
           type: "POST",
-          url: "server/add.php",
+          url: "../server/add.php",
           data: {
             code: $("#accessCode").val(),
             hospital: $("#hospital").val(),

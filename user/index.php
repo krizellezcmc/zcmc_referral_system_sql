@@ -71,7 +71,7 @@
         <div class="nav-menu">
           <ul>
             <li class="active">
-              <a href="main.html"><span class="icon-home mr-3"></span>Home</a>
+              <a href=""><span class="icon-home mr-3"></span>Home</a>
             </li>
             <li class="">
               <a href="change_pw_user.php"
