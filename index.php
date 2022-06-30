@@ -74,7 +74,7 @@
           },
           success: function (response) {
             var result = jQuery.parseJSON(response);
-           
+          
               if(result.res === 'yes') {
                 if(result.role == 'admin') {
                   window.location.href = "admin/";
