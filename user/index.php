@@ -118,12 +118,8 @@
             <br />
             <br />
             <form name="google-sheet">
-              <div class="user-details">
                 <input name="Timestamp" id="cTime" style="display: none" />
-              </div>
-
-              <div class="patientInfo" id="patientInfo" style="display: none">
-                <h4 style="margin: 30px 0">PATIENT INFORMATION</h4>
+                <h4>PATIENT INFORMATION</h4>
 
                 <div class="user-details">
                   <div class="input-box">
@@ -243,10 +239,8 @@
                     </div>
                   </div>
                 </div>
-
-                <h4 style="margin: 35px 0">SIGNIFICANT OTHER/WATCHER(S)</h4>
-
-                <div class="user-details">
+                <h4 style="margin: 30px 0">SIGNIFICANT OTHER/WATCHER(S)</h4>
+               <div class="user-details">
                   <div class="input-box">
                     <span class="details">Next of Kin</span>
                     <input type="text" name="Next of Kin" placeholder="" />
@@ -260,12 +254,8 @@
                     ></textarea>
                   </div>
 
+                  <h4 style="margin: 30px 0">ADMITTING/DISCHARGE DETAILS</h4>
                   <div class="input-box"></div>
-                </div>
-
-                <h4 style="margin: 30px 0">ADMITTING/DISCHARGE DETAILS</h4>
-
-                <div class="user-details">
                   <div class="input-box" style="width: 200px">
                     <span class="details">Date Admitted <span style="color:red">*</span></span>
                     <input
@@ -396,6 +386,8 @@
                     </select>
                   </div>  
                 </div>
+               </div>
+               
 
                 <div class="button">
                   <input type="submit" value="Add" />
@@ -406,7 +398,7 @@
         </div>
       </div>
     </main>
-
+    
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
