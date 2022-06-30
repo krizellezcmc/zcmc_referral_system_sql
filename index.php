@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/zcmc.png" />
     <title>Login | Hospital Referral System</title>
 
     <link
@@ -15,14 +16,14 @@
     <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
-    <div class="d-flex justify-content-center" style="margin: 100px">
-      <div class="container shadow-sm rounded w-auto">
+    <div class="d-flex justify-content-center" style="margin: 100px ">
+      <div class="container shadow-sm rounded w-auto" style="background-color:white">
         <div class="content p-5">
           <form id="login">
-          
           <div class="text-center mb-5">
              <div class="title fs-3 ">LOGIN</div>
             <div class="fs-6 lead text-uppercase">Hospital Referral System</div>
+            <div class="fs-6 lead text-uppercase">Zamboanga City Medical Center</div>
           </div>
            
             
