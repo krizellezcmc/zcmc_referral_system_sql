@@ -213,7 +213,6 @@
             middleName: $("#middleName").val(),
             hospital: $("#detailHospi").val(),
             email: $("#email").val(),
-            
           },
           success: function (response) {
             if (response != 0) {
