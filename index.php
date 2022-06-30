@@ -28,7 +28,7 @@
             
             <div class="mb-3">
               <label class="form-label">Email address</label>
-              <input type="text" class="form-control" id="email" required />
+              <input type="email" class="form-control" id="email" required />
               <div id="emailHelp" class="form-text">
                 We'll never share your email with anyone else.
               </div>
@@ -73,24 +73,26 @@
           },
           success: function (response) {
             var result = jQuery.parseJSON(response);
-            if(result.res === 'yes') {
-              if(result.role == 'admin') {
-                window.location.href = "admin/";
+           
+              if(result.res === 'yes') {
+                if(result.role == 'admin') {
+                  window.location.href = "admin/";
+                } else {
+                  window.location.href = "user/";
+                }
+              } else if(result.res === 'no') {
+                Swal.fire(
+                    'Invalid email!',
+                    'Email does not exist. Please try again!',
+                    'warning'
+                  )
               } else {
-                window.location.href = "user/";
-              }
-            } else if(result.res == 'invalid') {
-              Swal.fire(
-                  'Invalid password!',
-                  'Invalid password. Please try again!',
-                  'error'
-                )
-            } else {
-              Swal.fire(
-                  'Email does not exis!',
-                  'Please try again!',
-                  'error'
-                )
+                Swal.fire(
+                    'Invalid password!',
+                    'Invalid password. Please try again!',
+                    'error'
+                  )
+                
             }
           },
         });
