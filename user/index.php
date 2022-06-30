@@ -122,7 +122,7 @@
                 <input name="Timestamp" id="cTime" style="display: none" />
 
                 <div class="input-box">
-                  <span class="details">Email</span>
+                  <span class="details">Email <span style="color:red">*</span></span>
                   <input
                     type="email"
                     name="Email Address"
@@ -132,8 +132,9 @@
                 </div>
 
                 <div class="input-box">
-                  <span class="details">Referring Health Facility</span>
+                  <span class="details">Referring Health Facility <span style="color:red">*</span></span>
                   <select name="Referring Health Facility" id="detailHospi" required>
+                    <option value="">Choose Hospital</option>
                   <?php  
                    foreach($all as $list)
                    {
@@ -144,7 +145,7 @@
                 </div>
 
                 <div class="input-box" id="accessCode" style="width: 150px">
-                  <span class="details">Access Code</span>
+                  <span class="details">Access Code <span style="color:red">*</span></span>
                   <input type="number" id="code" name="AccessCode" placeholder="Input code" required/>
                   <span style="display: none; color: red" id="errorMessage"
                     >Invalid code</span
@@ -157,7 +158,7 @@
 
                 <div class="user-details">
                   <div class="input-box">
-                    <span class="details">Last Name</span>
+                    <span class="details">Last Name <span style="color:red">*</span></span>
                     <input
                       type="text"
                       name="Last Name of Patient"
@@ -167,7 +168,7 @@
                   </div>
 
                   <div class="input-box">
-                    <span class="details">First Name</span>
+                    <span class="details">First Name <span style="color:red">*</span></span>
                     <input
                       type="text"
                       name="First Name of Patient"
@@ -185,8 +186,8 @@
                     />
                   </div>
 
-                  <div class="input-box">
-                    <span class="details">Extended Name</span>
+                  <div class="input-box" style="width: 100px">
+                    <span class="details">Suffix Name</span>
                     <input
                       type="text"
                       name="Extended Name of Patient"
@@ -202,7 +203,7 @@
                   <div class="input-box" style="width: 150px">
                     <span class="details">Civil Status</span>
                     <select name="Civil Status">
-                      <option value="">Select civil status</option>
+                      <option value="">Choose</option>
                       <option value="Single">Single</option>
                       <option value="Married">Married</option>
                       <option value="Separated">Separated</option>
@@ -222,7 +223,7 @@
                   <div class="input-box" style="width: 200px">
                     <span class="details">Religion</span>
                     <select name="Religion">
-                      <option value="">Select religion</option>
+                      <option value="">Choose</option>
                       <option value="Roman Catholic">Roman Catholic</option>
                       <option value="Islam">Islam</option>
                       <option value="Protestant">Protestant</option>
@@ -297,7 +298,7 @@
 
                 <div class="user-details">
                   <div class="input-box" style="width: 200px">
-                    <span class="details">Date Admitted</span>
+                    <span class="details">Date Admitted <span style="color:red">*</span></span>
                     <input
                       type="date"
                       name="Date Admitted"
@@ -307,7 +308,7 @@
                   </div>
 
                   <div class="input-box">
-                    <span class="details">Referral Type</span>
+                    <span class="details">Referral Type<span style="color:red">*</span></span>
                     <select name="Referral Type" required>
                       <option value="">Select Referral Type</option>
                       <option value="COVID">COVID</option>
@@ -317,7 +318,7 @@
                   </div>
 
                   <div class="input-box">
-                    <span class="details">Disposition </span>
+                    <span class="details">Disposition <span style="color:red">*</span> </span>
                     <select name="Disposition" required>
                       <option value="">Select Disposition</option>
                       <option value="Moderate">Moderate</option>
@@ -327,43 +328,39 @@
                     </select>
                   </div>
 
-                  <div class="input-box" style="width: 200px">
+                  <div class="input-box" style="width: 120px">
                     <span class="details">Latest V/S-Temperature</span>
                     <input
                       type="text"
-                      placeholder=""
                       name="Latest V/S-Temperature"
                     />
                   </div>
 
-                  <div class="input-box" style="width: 200px">
+                  <div class="input-box" style="width: 120px">
                     <span class="details">Latest V/S-Blood Pressure</span>
                     <input
                       type="text"
-                      placeholder=""
                       name="Latest V/S-Blood Pressure"
                     />
                   </div>
 
-                  <div class="input-box" style="width: 200px">
+                  <div class="input-box" style="width: 120px">
                     <span class="details">Latest V/S-Respiration Rate</span>
                     <input
                       type="text"
-                      placeholder=""
                       name="Latest V/S-Respiration Rate"
                     />
                   </div>
 
-                  <div class="input-box" style="width: 200px">
+                  <div class="input-box" style="width: 120px">
                     <span class="details">Latest V/S Pulse Rate</span>
                     <input
                       type="text"
-                      placeholder=""
                       name="Latest V/S Pulse Rate"
                     />
                   </div>
 
-                  <div class="input-box" style="width: 200px">
+                  <div class="input-box" style="width: 150px">
                     <span class="details">Latest V/S-Oxygen Saturation</span>
                     <input
                       type="text"
@@ -418,9 +415,7 @@
                       name="Resident on Duty/Contact #"
                     />
                   </div>
-                </div>
-
-                <div class="details">
+                  
                   <div class="input-box" style="width: 200px">
                     <span class="details">Reason for Referral</span>
                     <select name="Reason for Referral">
@@ -442,6 +437,7 @@
         </div>
       </div>
     </main>
+
 
     <script src="../hospital.js"></script>
 
