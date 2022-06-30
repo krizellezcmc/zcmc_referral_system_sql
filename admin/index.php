@@ -3,7 +3,7 @@
   require_once '../server/config.php';
   include 'auth.php';
    
-  //Select Collectionsssss
+  //Select Collections
   $collection = $db->hospital_name;
 
   $filter  = [];
