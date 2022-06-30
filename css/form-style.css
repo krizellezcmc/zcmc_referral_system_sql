@@ -70,7 +70,7 @@ form .input-box p.details {
   outline: none;
   font-size: 13px;
   border-radius: 5px;
-  padding-left: 15px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-bottom-width: 2px;
   transition: all 0.3s ease;
@@ -85,7 +85,7 @@ select {
   outline: none;
   font-size: 13px;
   border-radius: 5px;
-  padding-left: 15px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-bottom-width: 2px;
   transition: all 0.3s ease;
