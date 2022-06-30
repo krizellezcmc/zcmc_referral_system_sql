@@ -26,7 +26,8 @@
                     $_SESSION['auth'] = 1;
                     $_SESSION['role'] = $role;
                     $_SESSION['userId'] = $id;
-                    $_SESSION['name'] = json_encode($user['firstName']);        
+                    $_SESSION['hospital'] = $user['hospital'];
+                    $_SESSION['name'] = json_encode($user['firstName']." ".$user['lastName']);        
                     
                     echo json_encode(array('res' => 'yes', 'role' => $role));        
                 } else {

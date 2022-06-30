@@ -65,7 +65,7 @@
         <div class="profile">
           <img src="../images/user.png" alt="Image" class="img-fluid" />
           <h3 class="name">Hi, <?php echo json_decode($_SESSION['name']); ?>!</h3>
-          <span class="country">Hospital Referral System (ZCMC)</span>
+          <span class="country"><?php echo $_SESSION['hospital']?></span>
         </div>
 
         <div class="nav-menu">
