@@ -257,6 +257,15 @@
                       placeholder=""
                     ></textarea>
                   </div>
+                  <div class="input-box">
+                  <span class="details">Call back No. <span style="color:red">*</span></span>
+                    <input type="tel" name="Call back No" placeholder="" />
+                  </div>
+                  <div class="input-box">
+                  <span class="details">Contact No. of Watcher<span style="color:red">*</span></span>
+                    <input type="tel" name="Contact No" placeholder="" />
+                  </div>
+                  <div class="input-box"></div>
                   <div class="input-box"></div>
 
                   <h4 style="margin: 30px 0">ADMITTING/DISCHARGE DETAILS</h4>
