@@ -293,7 +293,7 @@
                   </div>
 
                   <div class="input-box" style="width: 120px">
-                    <span class="details">Latest V/S-Temperature</span>
+                    <span class="details">Latest V/S-Temperature <span style="color:red">*</span></span>
                     <input
                       type="text"
                       name="Latest V/S-Temperature"
@@ -301,7 +301,7 @@
                   </div>
 
                   <div class="input-box" style="width: 120px">
-                    <span class="details">Latest V/S-Blood Pressure</span>
+                    <span class="details">Latest V/S-Blood Pressure <span style="color:red">*</span></span>
                     <input
                       type="text"
                       name="Latest V/S-Blood Pressure"
@@ -309,7 +309,7 @@
                   </div>
 
                   <div class="input-box" style="width: 120px">
-                    <span class="details">Latest V/S-Respiration Rate</span>
+                    <span class="details">Latest V/S-Respiration Rate <span style="color:red">*</span></span>
                     <input
                       type="text"
                       name="Latest V/S-Respiration Rate"
@@ -317,7 +317,7 @@
                   </div>
 
                   <div class="input-box" style="width: 120px">
-                    <span class="details">Latest V/S Pulse Rate</span>
+                    <span class="details">Latest V/S Pulse Rate <span style="color:red">*</span></span>
                     <input
                       type="text"
                       name="Latest V/S Pulse Rate"
@@ -325,7 +325,7 @@
                   </div>
 
                   <div class="input-box" style="width: 150px">
-                    <span class="details">Latest V/S-Oxygen Saturation</span>
+                    <span class="details">Latest V/S-Oxygen Saturation <span style="color:red">*</span></span>
                     <input
                       type="text"
                       placeholder=""
@@ -334,7 +334,7 @@
                   </div>
 
                   <div class="input-box">
-                    <span class="details">Glasgow Coma Scale</span>
+                    <span class="details">Glasgow Coma Scale <span style="color:red">*</span></span>
                     <input
                       type="text"
                       placeholder=""
