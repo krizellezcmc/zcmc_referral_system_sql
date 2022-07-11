@@ -105,23 +105,24 @@
               new: $("#newPass").val(),
             },
             success: function (response) {
-            if(response == 1) {
-              Swal.fire(
-                "Success!",
-                "Password changed!",
-                "success"
-              ).then(
-                function () {
-                  window.location = "index.php";
-                }
-              );
-            } else {
-              Swal.fire(
-                "Password not matched!",
-                "Unable to change password. Please try again!",
-                "error"
-              );
-            }
+            
+              if(response == 1) {
+                Swal.fire(
+                  "Success!",
+                  "Password changed!",
+                  "success"
+                ).then(
+                  function () {
+                    window.location = "index.php";
+                  }
+                );
+              } else {
+                Swal.fire(
+                  "Invalid password!",
+                  "Unable to change password. Please try again!",
+                  "error"
+                );
+              }
             },
           });
         } else {

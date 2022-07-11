@@ -7,30 +7,30 @@
   $newInput = $_POST['new'];
   $userId = $_SESSION['userId'];
 
-  
-  $hashed = password_hash($newInput, PASSWORD_DEFAULT);
+  $stmt = $conn->prepare("SELECT * FROM users WHERE userId = ?");
+  $stmt->bind_param("i", $userId);
+  $stmt->execute();
+  $result = $stmt->get_result();
 
-  //Select Collection
-  $collection = $db->users;
+  if(mysqli_num_rows($result) > 0) {
+    while($user = $result->fetch_assoc()) {
+      if(password_verify($currentInput, $user['password'])) {
 
-  $cursor = $collection->find(['_id' => $userId]); 
+        $hashed = password_hash($newInput, PASSWORD_DEFAULT);
 
-  foreach ($cursor as $user) {
-    $currentPassword = $user['password'];
+        $update = $conn->prepare("UPDATE users SET password = ? where userId = ?");
+        $update->bind_param("si", $hashed, $userId);
+        $res = $update->execute();
 
-    if(password_verify($currentInput, $currentPassword)) {
+        if($res) {
+          echo json_encode(1);
+        }
 
-      
-      $updatePassword = $collection->updateOne(
-        ['_id' => new MongoDB\BSON\ObjectID($userId)],
-        ['$set' => ['password' => $hashed]]
-      );
-
-       echo $updatePassword->getModifiedCount();
-      
-    } else {
-      echo json_encode("invalid"); 
+      } else {
+          echo json_encode(0);
+      } 
     }
+  } else {
+    echo json_encode(0);
   }
-
 ?>

@@ -74,6 +74,8 @@
           },
           success: function (response) {
             var result = jQuery.parseJSON(response);
+
+            console.log(result);
           
               if(result.res === 'yes') {
                 if(result.role == 'admin') {
@@ -81,12 +83,6 @@
                 } else {
                   window.location.href = "user/";
                 }
-              } else if(result.res === 'no') {
-                Swal.fire(
-                    'Invalid email!',
-                    'Email does not exist. Please try again!',
-                    'warning'
-                  )
               } else {
                 Swal.fire(
                     'Invalid password!',

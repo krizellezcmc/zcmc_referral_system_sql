@@ -3,13 +3,6 @@
   require_once '../server/config.php';
   include 'auth.php';
    
-  //Select Collections
-  $collection = $db->hospital_name;
-
-  $filter  = [];
-  $options = ['sort' => ['name' => 1]];
-  $all = $collection->find($filter, $options);
-
 ?>
 
 
@@ -22,20 +15,13 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
-      rel="stylesheet"
-    />
+   
 
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap"
       rel="stylesheet"
     />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap"
-      rel="stylesheet"
-    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../fonts/icomoon/style.css" />
 

@@ -3,14 +3,26 @@
 
   $hospital = $_POST['hospital'];
   $codeInput = $_POST['code'];
-  $address = $_POST['address'];
 
-  
-   //Select Collection
-  $collection = $db->hospital_name;
+   //GET HOSPITAL ID and SET DEFAULT PASSWORD(Access Code)
+    $getHospital = $conn->prepare("SELECT * FROM hospitals where name = '$hospital';");
+    $getHospital->execute();
+    $getHospital->store_result();
+    $row_count = $getHospital->num_rows();
 
-  $insert = $collection->insertOne(['name' => $hospital, 'code' => $codeInput, 'address' => $address]); 
+      if($row_count > 0) {
+        echo 3;
+      } else {
+        //INSERT HOSPITAL
+        $stmt = $conn->prepare("INSERT INTO hospitals (code, name) values(?, ?)");
+        $stmt->bind_param("is", $codeInput, $hospital);
+        $res = $stmt->execute();
 
-  echo json_encode($insert->getInsertedCount());
+        if($res) {
+          echo 1;        
+        } else {
+          echo 0;
+        }
+      }
   
 ?>

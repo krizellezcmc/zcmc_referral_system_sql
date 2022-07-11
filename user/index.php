@@ -1,16 +1,18 @@
+
 <?php
 
-  require_once '../server/config.php';
-  include './auth_USER.php';
-   
-  //Select Collection
-  $collection = $db->hospital_name;
+  include './auth_user.php';
+  include '../server/config.php';
+  $hospitalId = $_SESSION['hospitalId'];
+              
+  $stmt = $conn->prepare("SELECT * FROM hospitals WHERE hospitalId = ?");
+  $stmt->bind_param("i", $hospitalId);
+  $stmt->execute();
+  $result = $stmt->get_result();
 
-  $filter  = [];
-  $options = ['sort' => ['name' => 1]];
-  $all = $collection->find($filter, $options);
-
-?>
+  if(mysqli_num_rows($result) > 0) {
+    while($row = $result->fetch_assoc()) { 
+  ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,20 +22,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
-      rel="stylesheet"
-    />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap"
-      rel="stylesheet"
-    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../fonts/icomoon/style.css" />
 
@@ -65,7 +54,7 @@
         <div class="profile">
           <img src="../images/user.png" alt="Image" class="img-fluid" />
           <h3 class="name">Hi, <?php echo json_decode($_SESSION['name']); ?>!</h3>
-          <span class="country"><?php echo $_SESSION['hospital']?></span>
+          <span class="country"><?php echo $row['name']?></span>
         </div>
 
         <div class="nav-menu">
@@ -122,7 +111,14 @@
                 <h4 style="margin-top: 20px">PATIENT INFORMATION</h4>
 
 
-                <input type="hidden" value="<?php echo $_SESSION['hospital']?>" name="Referring Health Facility">
+              
+               
+                <input type="hidden" value="<?php echo $row['name'];?>" name="Referring Health Facility">
+
+                <?php 
+                  }
+                }
+                ?>
                 <input type="hidden" name="Full Name" value="<?php echo json_decode($_SESSION['name'])?>">
 
                 <div class="user-details" style="margin-top: 40px">

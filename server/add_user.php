@@ -1,9 +1,6 @@
 <?php
 
     require_once 'config.php';
-  
-    //Select Collection
-    $collection = $db->users;
 
     if(isset($_POST['email'])) {
 
@@ -11,25 +8,38 @@
       $lastName = $_POST['lastName'];
       $middleName = $_POST['middleName'];
       $email = $_POST['email'];
-      $hospital = $_POST['hospital'];
-
-     
-
-      //Search hospital
-      $cursor = $db->hospital_name->find(['name' => $hospital]); 
-
-      foreach ($cursor as $result) {
-        $accessCode = $result['code'];
-      
-          $hashed = password_hash($accessCode, PASSWORD_DEFAULT);
-
-          $insert = $collection->insertOne(['firstName' => $firstName, 'lastName' => $lastName, 'middleName' => $middleName, 'email' => $email, 'hospital' => $hospital, 'password' => $hashed, 'role' => "user"]); 
-
-          echo json_encode($insert->getInsertedId());
-        }  
-      };
-
-    
+      $hospital = mysqli_real_escape_string($conn, $_POST['hospital']);
 
 
+      $emailCheck = $conn->prepare("SELECT email FROM users where email = ?;");
+      $emailCheck->bind_param('s', $email);
+      $emailCheck->execute();
+      $emailCheck->store_result();
+      $row_count = $emailCheck->num_rows();
+
+        if($row_count > 0) {
+          echo json_encode("Email exist");
+        } else {
+           // GET HOSPITAL ID and SET DEFAULT PASSWORD(Access Code)
+          $getHospital = $conn->prepare("SELECT * FROM hospitals where name = '$hospital';");
+          $getHospital->execute();
+          $getResult = $getHospital->get_result();
+
+          while($result = $getResult->fetch_assoc()) {
+
+            $hashed = password_hash($result["code"], PASSWORD_DEFAULT);
+            // INSERT TO USERS TABLE
+            $stmt = $conn->prepare("INSERT INTO users (firstName, lastName, middleName, email, password, FK_hospitalId) values(?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("sssssi", $firstName, $lastName, $middleName, $email, $hashed, $result['hospitalId']);
+
+            $res = $stmt->execute();
+
+            if($res) {
+              echo 1;        
+            } else {
+              echo 0;
+            }
+          }
+        }
+    } 
 ?>

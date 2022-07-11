@@ -1,6 +1,6 @@
 <?php
 
-require_once '../server/config.php';
+  require_once '../server/config.php';
   include 'auth.php';
 
 ?>
@@ -13,20 +13,13 @@ require_once '../server/config.php';
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
-      rel="stylesheet"
-    />
-
+   
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap"
       rel="stylesheet"
     />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap"
-      rel="stylesheet"
-    />
+  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../fonts/icomoon/style.css" />
 
@@ -138,17 +131,11 @@ require_once '../server/config.php';
                 </div>
                 <div class="input-box">
                   <span class="details">Access Code</span>
-                  <input type="text" id="accessCode" placeholder="Enter Access Code" />
+                  <input type="number" id="accessCode" placeholder="Enter Access Code" />
                 </div>
-                <div class="input-box">
-                  <span class="details">Address</span>
-                  <textarea
-                    name="Diagnosis"
-                    id="address"
-                    style="padding: 10px"
-                    placeholder="Enter Address"
-                  ></textarea>
-                </div>
+
+                <div class="input-box"></div>
+                
               </div>
               <div class="button">
                 <input type="submit" value="Add" />
@@ -179,12 +166,12 @@ require_once '../server/config.php';
           data: {
             code: $("#accessCode").val(),
             hospital: $("#hospital").val(),
-            address: $("#address").val(),
+
           },
           success: function (response) {
             //var res = $.parseJSON(response);
 
-            if (response > 0) {
+            if (response == 1) {
               Swal.fire(
                 "Hospital Added!",
                 "New Referral Hospital has been added.",
@@ -194,9 +181,13 @@ require_once '../server/config.php';
                   window.location = "add_hospital.php";
                 }
               );
-            } else {
+            } else if(response == 3) {
+              Swal.fire("Error!", "Hospital already exist. Please try again!", "warning");
+            }else {
               Swal.fire("Error!", "Error occured. Please try again!", "error");
             }
+
+       
           },
         });
       });
